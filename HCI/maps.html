@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palorant</title>
+    <link rel="stylesheet" href="mapstyles.css">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="./images/logo.jpg" alt="Logo">
+            <h1>Palorant</h1>
+        </div>
+        <nav>
+            <a href="palorant.html">Home</a>
+            <a href="agent.html">Agent</a>
+            <a href="maps.html">Maps</a>
+            <a href="news.html#">News</a>
+            <a href="report.html">Report</a>
+        </nav>
+    </header>
+
+    <!-- Maps Section (First Page) -->
+    <section class="maps" id="map1">
+        <h2>MAPS</h2>
+        <div class="maps-container">
+            <div class="map-item">
+                <img src="./images/fracture-map.jpg" alt="Fracture">
+                <p><b>Fracture</b> - Features a unique H-shape connecting Attacker's spawn.</p>
+            </div>
+            <div class="map-item">
+                <img src="./images/breeze-map.jpg" alt="Breeze">
+                <p><b>Breeze</b> - Valorant map set in Bermuda, featuring open spaces.</p>
+            </div>
+            <div class="map-item">
+                <img src="./images/icebox-map.jpg" alt="Icebox">
+                <p><b>Icebox</b> - A close-quarters combat map with strategic zip lines.</p>
+            </div>
+            <div class="map-item">
+                <img src="./images/ascent-map.jpg" alt="Ascent">
+                <p><b>Ascent</b> - A Venice-inspired map featuring destructible doors.</p>
+            </div>
+        </div>
+        <button onclick="showMap2()" class="btn">Next</button>
+    </section>
+
+    <!-- Maps Section (Second Page) -->
+    <section class="maps" id="map2" style="display: none;">
+        <h2>MAPS</h2>
+        <div class="maps-container">
+            <div class="map-item">
+                <img src="./images/bind-map.jpg" alt="Bind">
+                <p><b>Bind</b> - A Middle Eastern-inspired map with two teleporters.</p>
+            </div>
+            <div class="map-item">
+                <img src="./images/split-map.jpg" alt="Split">
+                <p><b>Split</b> - A Tokyo Shinjuku-inspired map combining modern elements.</p>
+            </div>
+            <div class="map-item">
+                <img src="./images/haven-map.jpg" alt="Haven">
+                <p><b>Haven</b> - A Bhutanese-style map with three bomb sites.</p>
+            </div>
+        </div>
+        <button onclick="showMap1()" class="btn">Back</button>
+    </section>
+
+    <script>
+        function showMap2() {
+            document.getElementById("map1").style.display = "none";
+            document.getElementById("map2").style.display = "block";
+        }
+
+        function showMap1() {
+            document.getElementById("map1").style.display = "block";
+            document.getElementById("map2").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
