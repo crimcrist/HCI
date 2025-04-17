@@ -9,55 +9,81 @@
 <body>
 
 <!-- Header -->
-    <header>
-        <div class="logo">
-            <img src="./images/logo.jpg" alt="Logo">
-            <h1>Palorant</h1>
-        </div>
-        <nav>
-            <a href="palorant.html">Home</a>
-            <a href="agent.html">Agent</a>
-            <a href="maps.html">Maps</a>
-            <a href="news.html#">News</a>
-            <a href="report.html">Report</a>
-        </nav>
-    </header>
-
-    <div class="container">
-        <h1>REPORT</h1>
-
-        <section class="report-section">
-            <h2>Reporting Disruptive Players</h2>
-            <p>Reporting problematic players is crucial for maintaining a fair and healthy gaming environment. Follow these steps:</p>
-            <ol>
-                <li>Open the Career menu and select Match History.</li>
-                <li>Choose the relevant match.</li>
-                <li>Click the name of the player to report.</li>
-                <li>Provide detailed and accurate information.</li>
-                <li>Explain the problem (toxicity, cheating, harassment, etc.).</li>
-                <li>Include supporting evidence (screenshots or recordings).</li>
-                <li>Send the report for review.</li>
-            </ol>
-        </section>
-
-        <section class="why-report">
-            <h2>Why Report Disruptive Players?</h2>
-            <ul>
-                <li>Maintains a healthy gaming environment.</li>
-                <li>Prevents unacceptable behavior.</li>
-                <li>Enhances gameplay experience.</li>
-            </ul>
-        </section>
-
-        <section class="report-tips">
-            <h2>Reporting Tips</h2>
-            <ul>
-                <li>Provide accurate and complete information.</li>
-                <li>Attach strong evidence.</li>
-                <li>Report incidents promptly.</li>
-            </ul>
-            <p>By reporting disruptive players, you contribute to a positive and enjoyable gaming community.</p>
-        </section>
+<header>
+    <div class="logo">
+        <img src="./images/logo.jpg" alt="Logo">
+        <h1>Palorant</h1>
     </div>
+    <nav>
+        <a href="palorant.html">Home</a>
+        <a href="agent.html">Agent</a>
+        <a href="maps.html">Maps</a>
+        <a href="news.html">News</a>
+        <a href="report.html">Report</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>REPORT</h1>
+
+    <section class="report-section">
+        <h2>Reporting Disruptive Players</h2>
+        <p>Reporting problematic players is crucial for maintaining a fair and healthy gaming environment. Follow these steps:</p>
+        <ol>
+            <li>Open the Career menu and select Match History.</li>
+            <li>Choose the relevant match.</li>
+            <li>Click the name of the player to report.</li>
+            <li>Provide detailed and accurate information.</li>
+            <li>Explain the problem (toxicity, cheating, harassment, etc.).</li>
+            <li>Include supporting evidence (screenshots or recordings).</li>
+            <li>Send the report for review.</li>
+        </ol>
+    </section>
+
+    <section class="why-report">
+        <h2>Why Report Disruptive Players?</h2>
+        <ul>
+            <li>Maintains a healthy gaming environment.</li>
+            <li>Prevents unacceptable behavior.</li>
+            <li>Enhances gameplay experience.</li>
+        </ul>
+    </section>
+
+    <section class="report-tips">
+        <h2>Reporting Tips</h2>
+        <ul>
+            <li>Provide accurate and complete information.</li>
+            <li>Attach strong evidence.</li>
+            <li>Report incidents promptly.</li>
+        </ul>
+        <p>By reporting disruptive players, you contribute to a positive and enjoyable gaming community.</p>
+    </section>
+
+    <!-- Tambahan: Form -->
+    <section class="report-form">
+        <h2>Submit a Report</h2>
+        <form id="reportForm">
+            <label for="username">Player Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="reason">Reason for Report:</label>
+            <select id="reason" name="reason" required>
+                <option value="">-- Select Reason --</option>
+                <option value="toxicity">Toxicity</option>
+                <option value="cheating">Cheating</option>
+                <option value="harassment">Harassment</option>
+                <option value="afk">AFK/Leaver</option>
+            </select>
+
+            <label for="details">Details:</label>
+            <textarea id="details" name="details" rows="5" placeholder="Explain the incident..." required></textarea>
+
+            <button type="submit">Submit Report</button>
+            <p id="successMessage" style="display: none;">✅ Report submitted! Thank you for helping the community.</p>
+        </form>
+    </section>
+</div>
+
+<script src="report.js"></script>
 </body>
 </html>

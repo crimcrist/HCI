@@ -18,12 +18,12 @@ body {
 
 /* General Section Styling */
 section {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5% 2%;
+    width: 90%; /* Lebar 90% layar */
+    max-width: 1200px; /* Maksimal 1200px */
+    margin: 0 auto; /* Tengah layar */
+    padding: 5% 2%; /* Jarak fleksibel */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Elemen dalam berurutan vertikal */
     align-items: center;
     text-align: center;
 }
@@ -69,6 +69,53 @@ nav a:hover {
     color: #e94560;
 }
 
+/* Burger Menu for Mobile */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        background-color: #1b1f26;
+        border-radius: 5px;
+        width: 200px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+}
+
 /* Maps Section */
 .maps {
     padding: 40px;
@@ -104,8 +151,8 @@ h2 {
 
 .map-item img {
     width: 100%;
-    height: 200px; /* Ukuran tetap */
-    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    height: 200px;
+    object-fit: cover;
     border-radius: 5px;
 }
 

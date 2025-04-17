@@ -1,10 +1,8 @@
-/* Import Font */
 @font-face {
-    font-family: 'ValorantFont';
-    src: url('./Font/ReemKufiInk-Regular.ttf'); 
+    font-family: simple;
+    src: url('./Font/ReemKufiInk-Regular.ttf');
 }
 
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -12,17 +10,30 @@
 }
 
 body {
-    font-family: 'ValorantFont', sans-serif;
+    font-family: simple, sans-serif;
+    color: #ffffff;
     background-color: #20232a;
-    color: white;
+    line-height: 1.6;
 }
 
-/* Header */
+/* General Section Styling */
+section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5% 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Header Section */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(90deg, #1b1f26, #292c36);
+    background: #1b1f26;
     padding: 15px 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
@@ -46,35 +57,18 @@ header {
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     margin: 0 15px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
     transition: color 0.3s ease-in-out;
-    position: relative;
 }
 
 nav a:hover {
     color: #e94560;
 }
 
-nav a::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 0;
-    background: #e94560;
-    transition: width 0.3s ease-in-out;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-nav a:hover::after {
-    width: 100%;
-}
 
 /* News Section */
 .news {
@@ -90,10 +84,10 @@ nav a:hover::after {
     font-weight: bold;
     text-transform: uppercase;
     color: white;
-    background: linear-gradient(90deg, #0051ff, #00d0ff);
-    -webkit-background-clip: text;
+    background: linear-gradient(90deg, #e94560, #f8a6b4);
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    border-bottom: 3px solid #00d0ff;
+    border-bottom: 3px solid #e94560;
     display: inline-block;
     padding-bottom: 10px;
 }
@@ -127,7 +121,7 @@ nav a:hover::after {
 .news-item h2 {
     font-size: 20px;
     margin: 10px 0;
-    color: #00d0ff;
+    color: #e94560;
 }
 
 .news-item p {
@@ -145,7 +139,7 @@ footer {
 }
 
 footer a {
-    color: #00d0ff;
+    color: #cc8d97;
     text-decoration: none;
 }
 

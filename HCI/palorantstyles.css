@@ -183,7 +183,7 @@ nav a:hover {
 
 /* Agent Wow Section */
 .agent-wow {
-    background: url('./images/background-agent.jpg') no-repeat center center/cover;
+    background: url('./images/backgrounf-agent.jpg') no-repeat center center/cover;
     flex-direction: row;
     text-align: justify;
     gap: 20px;

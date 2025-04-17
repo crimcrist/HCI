@@ -18,12 +18,12 @@ body {
 
 /* General Section Styling */
 section {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5% 2%;
+    width: 90%; /* Lebar 90% layar */
+    max-width: 1200px; /* Maksimal 1200px */
+    margin: 0 auto; /* Tengah layar */
+    padding: 5% 2%; /* Jarak fleksibel */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Elemen dalam berurutan vertikal */
     align-items: center;
     text-align: center;
 }

@@ -18,12 +18,12 @@ body {
 
 /* General Section Styling */
 section {
-    width: 90%; /* Lebar 90% layar */
-    max-width: 1200px; /* Maksimal 1200px */
-    margin: 0 auto; /* Tengah layar */
-    padding: 5% 2%; /* Jarak fleksibel */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5% 2%;
     display: flex;
-    flex-direction: column; /* Elemen dalam berurutan vertikal */
+    flex-direction: column;
     align-items: center;
     text-align: center;
 }
@@ -54,6 +54,31 @@ header {
     color: #e94560;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+nav .menu-icon span {
+    background-color: #ffffff;
+    height: 3px;
+    width: 25px;
+    margin: 5px 0;
+}
+
+/* Default Navigation */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-left: 20px;
 }
 
 nav a {
@@ -87,7 +112,6 @@ nav a:hover {
     text-transform: uppercase;
     color: white;
     background: linear-gradient(90deg, #e94560, #ff6f61);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     border-bottom: 3px solid #e94560;
     display: inline-block;
@@ -126,4 +150,28 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #1b1f26;
+        padding: 15px 0;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 10;
+    }
+
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav .menu-icon {
+        display: flex;
+    }
 }

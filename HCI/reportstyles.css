@@ -14,41 +14,16 @@ body {
     color: #ffffff;
     background-color: #20232a;
     line-height: 1.6;
-    position: relative;
 }
 
-/* Background Styling */
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.background-top {
-    width: 100%;
-    height: 50vh;
-    background: url('./images/background-top.jpg') no-repeat center center/cover;
-}
-
-.background-bottom {
-    width: 100%;
-    height: 50vh;
-    background: url('./images/background-bottom.jpg') no-repeat center center/cover;
-}
-
-/* Header */
+/* Header Section */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(27, 31, 38, 0.8); /* Transparan agar background terlihat */
+    background: #1b1f26;
     padding: 15px 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    position: relative;
-    z-index: 10;
 }
 
 .logo {
@@ -95,18 +70,18 @@ nav a:hover {
     z-index: 2;
 }
 
-/* Report Sections */
+/* Headings & Text Styling */
 h1 {
     text-align: center;
     font-size: 36px;
     color: #e94560;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 26px;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-transform: uppercase;
 }
 
@@ -117,22 +92,76 @@ p {
     color: #ddd;
 }
 
+/* List Styling */
 ol, ul {
     list-style-position: inside;
     font-size: 16px;
     line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 20px;
 }
 
 li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
-/* Footer */
-footer {
-    background: #1b1f26;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
-    color: #aaa;
+/* Report Form Styling */
+.report-form {
     margin-top: 40px;
+    padding: 20px;
+    background-color: #1c1f26;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.report-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.report-form label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: left;
+}
+
+.report-form input,
+.report-form select,
+.report-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #2c2f36;
+    color: #fff;
+    outline: none;
+}
+
+.report-form textarea {
+    resize: vertical;
+}
+
+.report-form button {
+    background: #e94560;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.report-form button:hover {
+    background: #ff4e6b;
+}
+
+#successMessage {
+    color: #00ff88;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
 }

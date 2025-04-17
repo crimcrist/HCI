@@ -15,11 +15,18 @@
             <h1>Palorant</h1>
         </div>
         <nav>
-            <a href="palorant.html">Home</a>
-            <a href="agent.html">Agent</a>
-            <a href="maps.html">Maps</a>
-            <a href="news.html#">News</a>
-            <a href="report.html">Report</a>
+            <div class="nav-links">
+                <a href="palorant.html">Home</a>
+                <a href="agent.html">Agent</a>
+                <a href="maps.html">Maps</a>
+                <a href="news.html#">News</a>
+                <a href="report.html">Report</a>
+            </div>
+            <div class="burger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </nav>
     </header>
 
@@ -67,17 +74,7 @@
         <button onclick="showMap1()" class="btn">Back</button>
     </section>
 
-    <script>
-        function showMap2() {
-            document.getElementById("map1").style.display = "none";
-            document.getElementById("map2").style.display = "block";
-        }
-
-        function showMap1() {
-            document.getElementById("map1").style.display = "block";
-            document.getElementById("map2").style.display = "none";
-        }
-    </script>
+    <script src="maps.js"></script>
 
 </body>
 </html>
