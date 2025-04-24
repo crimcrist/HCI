@@ -6,16 +6,33 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         const username = document.getElementById("username").value.trim();
+        const matchDate = document.getElementById("match-date").value;
+        const email = document.getElementById("email").value.trim();
         const reason = document.getElementById("reason").value;
         const details = document.getElementById("details").value.trim();
 
-        if (username === "" || reason === "" || details === "") {
-            alert("Please fill out all fields.");
+        // Validasi: Cek apakah semua wajib diisi
+        if (!username || !matchDate || !email || !reason || !details) {
+            alert("Please fill out all required fields.");
             return;
         }
 
-        // Simulasi kirim (nanti bisa dihubungkan ke backend)
-        console.log("Report Sent:", { username, reason, details });
+        // Validasi email: harus mengandung @ dan karakter setelahnya
+        if (!email.includes("@") || email.endsWith("@")) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        // Simulasi pengiriman data
+        const reportData = {
+            username,
+            matchDate,
+            email,
+            reason,
+            details
+        };
+
+        console.log("Report Sent:", reportData);
 
         form.reset();
         successMessage.style.display = "block";

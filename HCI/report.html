@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palorant</title>
     <link rel="stylesheet" href="reportstyles.css">
+    <script defer src="report.js"></script>
 </head>
 <body>
 
 <!-- Header -->
 <header>
     <div class="logo">
-        <img src="./images/logo.jpg" alt="Logo">
+        <img src="./images/logo.jpg" alt="Logo" />
         <h1>Palorant</h1>
     </div>
-    <nav>
+    <nav class = "nav-links">
         <a href="palorant.html">Home</a>
         <a href="agent.html">Agent</a>
         <a href="maps.html">Maps</a>
@@ -63,10 +64,13 @@
     <section class="report-form">
         <h2>Submit a Report</h2>
         <form id="reportForm">
-            <label for="username">Player Username:</label>
+            <label for="username">1. Player Username:</label>
             <input type="text" id="username" name="username" required>
-
-            <label for="reason">Reason for Report:</label>
+        
+            <label for="match-date">2. Date of the Match:</label>
+            <input type="date" id="match-date" name="match-date" required>
+        
+            <label for="reason">3. Reason for Report:</label>
             <select id="reason" name="reason" required>
                 <option value="">-- Select Reason --</option>
                 <option value="toxicity">Toxicity</option>
@@ -74,13 +78,17 @@
                 <option value="harassment">Harassment</option>
                 <option value="afk">AFK/Leaver</option>
             </select>
-
-            <label for="details">Details:</label>
+        
+            <label for="evidence">4. Evidence Link (optional):</label>
+            <input type="url" id="evidence" name="evidence" placeholder="e.g. https://imgur.com/...">
+        
+            <label for="details">5. Detailed Description:</label>
             <textarea id="details" name="details" rows="5" placeholder="Explain the incident..." required></textarea>
-
+        
             <button type="submit">Submit Report</button>
             <p id="successMessage" style="display: none;">✅ Report submitted! Thank you for helping the community.</p>
         </form>
+        
     </section>
 </div>
 

@@ -21,10 +21,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #1b1f26;
-    padding: 15px 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
+    background: #111820;
+    padding: 20px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
 
 .logo {
     display: flex;
@@ -33,85 +36,114 @@ header {
 
 .logo img {
     height: 40px;
-    margin-right: 15px;
-}
+    margin-right: 12px;
+    border-radius: 6px;
+  }
 
 .logo h1 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    color: #e94560;
+    color: #ff4655; /* Merah khas Valorant */
     text-transform: uppercase;
-    letter-spacing: 2px;
-}
+    letter-spacing: 3px;
+  }
 
-nav a {
-    color: #ffffff;
+/* Navigation Styling */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    margin-left: auto;
+  }
+  
+  .nav-links a {
+    color: #ffffffcc;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease-in-out;
-}
-
-nav a:hover {
-    color: #e94560;
-}
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ff4655;
+    transition: 0.4s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #ff4655;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
 
 /* Container Styling */
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     margin: 80px auto;
     background: rgba(27, 31, 38, 0.9);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    position: relative;
+    position: relative; /* Untuk memastikan container tetap di atas GIF */
     z-index: 2;
 }
 
-/* Headings & Text Styling */
-h1 {
+body::before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/report.gif'); /* Path GIF */
+    background-size: cover;  /* Mengatur GIF agar memenuhi layar */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; /* Agar berada di belakang container */
+}
+
+.container h1 {
     text-align: center;
-    font-size: 36px;
+    font-size: 42px;
     color: #e94560;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px #e94560;
 }
 
 h2 {
     font-size: 26px;
-    color: #ffffff;
-    margin-bottom: 15px;
+    color: #fff;
+    margin-bottom: 20px;
     text-transform: uppercase;
+    border-bottom: 2px solid #e94560;
+    padding-bottom: 10px;
 }
 
-p {
+p, li {
     font-size: 16px;
-    margin-bottom: 20px;
-    text-align: center;
     color: #ddd;
+    margin-bottom: 15px;
 }
 
-/* List Styling */
-ol, ul {
-    list-style-position: inside;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #ccc;
-    margin-bottom: 20px;
+ul, ol {
+    padding-left: 20px;
 }
 
-li {
-    margin-bottom: 8px;
-}
-
-/* Report Form Styling */
 .report-form {
     margin-top: 40px;
-    padding: 20px;
-    background-color: #1c1f26;
-    border-radius: 10px;
-    width: 100%;
+    background-color: rgba(44, 47, 54, 0.9);
+    border: 1px solid #e94560;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
 }
 
 .report-form form {
@@ -121,42 +153,37 @@ li {
 }
 
 .report-form label {
-    font-size: 16px;
-    font-weight: 500;
-    color: #ffffff;
-    text-align: left;
+    font-weight: bold;
+    color: #fff;
 }
 
 .report-form input,
 .report-form select,
 .report-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    background: #2c2f36;
+    background-color: #1f2229;
     color: #fff;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #e94560;
     outline: none;
-}
-
-.report-form textarea {
-    resize: vertical;
 }
 
 .report-form button {
     background: #e94560;
-    color: white;
-    padding: 12px;
-    font-size: 16px;
+    color: #fff;
+    padding: 14px;
+    font-size: 18px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 .report-form button:hover {
     background: #ff4e6b;
+    transform: scale(1.05);
 }
 
 #successMessage {
