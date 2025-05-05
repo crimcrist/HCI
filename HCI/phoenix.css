@@ -18,16 +18,21 @@ body {
 
 /* Header Section */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #111820;
-    padding: 20px 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(17, 24, 32, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(17, 24, 32, 0.95);
+}
 
 .logo {
     display: flex;
@@ -83,3 +88,170 @@ header {
   .nav-links a:hover::after {
     width: 100%;
   }
+
+  .agent-detail {
+    color: white;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #111820, #1b1f26, #111820);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .agent-title {
+    font-size: 52px;
+    margin-bottom: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background: linear-gradient(90deg, #ff4655, #ff7b9c, #ff4655);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 0%;}
+    100% { background-position: 200%;}
+  }
+  
+  .agent-title .highlight {
+    color: #ff4655;
+  }
+  
+  .agent-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .agent-image img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+  
+  .agent-info {
+    max-width: 600px;
+    background: rgba(255, 70, 85, 0.05);
+    padding: 35px;
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(255, 70, 85, 0.3), 0 0 40px rgba(255, 70, 85, 0.2);
+    transition: all 0.5s ease;
+  }
+  
+  .agent-info:hover {
+    box-shadow: 0 0 30px rgba(255, 70, 85, 0.5), 0 0 60px rgba(255, 70, 85, 0.4);
+    transform: translateY(-5px);
+  }
+
+  .agent-info h3 {
+    font-size: 24px;
+    color: #ff4655;
+    margin-bottom: 15px;
+  }
+
+  
+  .agent-info p {
+    color: #ddd;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  
+  .agent-info ul {
+    list-style: disc inside;
+    color: #ccc;
+  }
+  
+  .agent-info ul li {
+    margin-bottom: 12px;
+  }
+
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .burger-menu div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  .burger-menu.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .burger-menu.toggle div:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger-menu.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  
+  
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      right: 30px;
+      background: #1b1f26;
+      border-radius: 8px;
+      padding: 20px;
+      z-index: 99;
+      align-items: flex-start; /* Biar teksnya ga ketengah */
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .burger-menu {
+      display: flex;
+    }
+  
+    .nav-links a {
+      margin: 10px 0;
+      font-size: 18px;
+      text-align: left;
+    }
+  }
+  
+
+  /* Footer */
+footer {
+  background: #1b1f26;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 80px;
+}
+
+footer a {
+  color: #ff95a3;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

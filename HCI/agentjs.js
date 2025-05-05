@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelector('.nav-links');
     
     burgerMenu.addEventListener('click', () => {
-      navLinks.classList.toggle('active'); // Toggle show/hide nav menu
-      burgerMenu.classList.toggle('toggle'); // Tambah animasi burger (optional)
+      navLinks.classList.toggle('active'); 
+      burgerMenu.classList.toggle('toggle');
     });
   });
   

@@ -85,6 +85,33 @@ header {
     width: 100%;
   }
 
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .burger-menu div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  .burger-menu.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .burger-menu.toggle div:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger-menu.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+
   /* Sub-header */
   .header {
     background-image: url('./images/bg-agent.jpg');
@@ -152,6 +179,25 @@ h6 {
     letter-spacing: 2px;
 }
 
+.btn {
+    display: inline-block;
+    padding: 6px 16px;      
+    font-size: 14px;       
+    background: #ff4655;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn:hover {
+    background: #d63b4a;
+    transform: translateY(-2px);
+  }
+  
+
 .abilities {
     width: 90%;
     max-width: 1200px;
@@ -218,8 +264,50 @@ h6 {
     transform: translateY(0);
 }
 
+/* Footer */
+footer {
+    background: #1b1f26;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 80px;
+}
+
+footer a {
+    color: #ff95a3;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
 /* Responsive */
+
 @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #1b1f26;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        z-index: 200;
+      }
+    
+      .nav-links.active {
+        display: flex;
+      }
+    
+      .burger-menu {
+        display: flex;
+      }
+
     .agents-container, .ability {
         flex-direction: column;
         align-items: center;
@@ -232,4 +320,11 @@ h6 {
     .header {
         font-size: 28px;
     }
+
+    .nav-links a {
+      margin: 10px 0;
+      font-size: 18px;
+      text-align: left;
+    }
 }
+

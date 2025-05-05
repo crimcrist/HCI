@@ -10,10 +10,14 @@ function showMap1() {
     document.getElementById("map2").style.display = "none"; // Hide the second map section
 }
 
-// Function to toggle the navigation menu on mobile
-const burgerMenu = document.querySelector('.burger-menu');
-const navLinks = document.querySelector('.nav-links');
-
-burgerMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active'); // Toggle the active class to show or hide the menu
-});
+// Burger menu toggle
+document.addEventListener("DOMContentLoaded", function () {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    burgerMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active'); // Toggle show/hide nav menu
+      burgerMenu.classList.toggle('toggle'); // Tambah animasi burger (optional)
+    });
+  });
+  

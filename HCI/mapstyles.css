@@ -12,10 +12,10 @@
   body {
     font-family: simple, sans-serif;
     color: #ffffff;
-    background-color: #20232a;
+    background: url('./images/boom.gif') no-repeat center center fixed;
+    background-size: cover;
     line-height: 1.6;
   }
-  
   /* General Section Styling */
   section {
     width: 90%;
@@ -94,6 +94,33 @@
   .nav-links a:hover::after {
     width: 100%;
   }
+
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .burger-menu div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+
+  .burger-menu.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .burger-menu.toggle div:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger-menu.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
   
 /* Maps Section */
 .maps {
@@ -171,35 +198,56 @@ p {
     box-shadow: 0 0 20px rgba(255, 72, 97, 0.7);
 }
 
+
+/* Footer */
+footer {
+  background: #1b1f26;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 80px;
+}
+
+footer a {
+  color: #ff95a3;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 /* Responsive tweaks tetap sama */
 @media screen and (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 30px;
-        background-color: #1b1f26;
-        border-radius: 5px;
-        width: 200px;
-        padding: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    background: #1b1f26;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 99;
+    align-items: flex-start; 
+  }
 
-    .nav-links.active {
-        display: flex;
-    }
+  .nav-links a {
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: left;
+  }
 
-    nav {
-        width: 100%;
-        justify-content: space-between;
-    }
+  .nav-links.active {
+    display: flex;
+  }
 
-    .burger-menu {
-        display: block;
-    }
+  .burger-menu {
+    display: flex;
+  }
 
-    nav a {
-        margin: 10px 0;
-    }
+  .nav-links a {
+    margin: 10px 0;
+  }
 }

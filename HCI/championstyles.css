@@ -67,78 +67,91 @@ header {
     gap: 25px;
   }
   
-  .nav-links li a {
+  .nav-links a {
     color: #ffffffcc;
     text-decoration: none;
     font-size: 17px;
     font-weight: 600;
     letter-spacing: 1px;
-    position: relative;
     transition: all 0.3s ease;
+    position: relative;
   }
   
-  .nav-links li a::after {
+  .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 0;
+    width: 0%;
     height: 2px;
-    width: 0;
+    bottom: -4px;
+    left: 0;
     background-color: #ff4655;
     transition: 0.4s ease;
   }
   
-  .nav-links li a:hover {
+  .nav-links a:hover {
     color: #ff4655;
   }
   
-  .nav-links li a:hover::after {
+  .nav-links a:hover::after {
     width: 100%;
   }
   
-  /* Hamburger */
-  .menu-icon {
+  .burger-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 5px;
   }
   
-  .menu-icon span {
+  .burger-menu div {
     width: 25px;
     height: 3px;
-    background-color: white;
-    border-radius: 5px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
   }
   
-  /* Responsive */
-  @media screen and (max-width: 768px) {
-    .menu-icon {
-      display: flex;
-    }
+  .burger-menu.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
   
+  .burger-menu.toggle div:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger-menu.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  
+  @media (max-width: 768px) {
     .nav-links {
       display: none;
       flex-direction: column;
       position: absolute;
       top: 80px;
-      right: 40px;
-      background-color: #111820;
+      right: 30px;
+      background: #1b1f26;
+      border-radius: 8px;
       padding: 20px;
-      border-radius: 10px;
+      z-index: 99;
+      align-items: flex-start; 
     }
   
     .nav-links.active {
       display: flex;
     }
   
-    .nav-links li {
-      margin: 10px 0;
+    .burger-menu {
+      display: flex;
     }
-  }
-  
-  
-/* Champion Section */
+
+    .nav-links a {
+      margin: 10px 0;
+      font-size: 18px;
+      text-align: left;
+    }
+  }  
+
 /* Main Section */
 .champion {
     background: linear-gradient(120deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('./images/champion.jpg') center/cover no-repeat fixed;
@@ -167,7 +180,7 @@ header {
     margin-bottom: 30px;
     letter-spacing: 5px;
     background: linear-gradient(90deg, #ff4655, #f9cb28);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.8), 0 8px 15px rgba(255, 70, 85, 0.7);
     animation: neonGlow 1.5s ease-in-out infinite alternate;

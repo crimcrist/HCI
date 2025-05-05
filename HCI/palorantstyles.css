@@ -14,12 +14,15 @@ body {
   color: #ffffff;
   background-color: #20232a;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
 }
 
 /* General Section Styling */
 section {
-  width: 90%;
-  max-width: 1200px; 
+  width: 100vw; /* 100% dari viewport width */
+  height: 100vh; /* 100% dari viewport height */
+  overflow: hidden;
   margin: 0 auto;
   padding: 5% 2%; 
   display: flex;
@@ -40,6 +43,7 @@ header {
   top: 0;
   z-index: 100;
 }
+
 
 .nav-links {
   display: flex;
@@ -96,7 +100,6 @@ header {
 }
 
 
-/* Burger Menu */
 .burger-menu {
   display: none;
   flex-direction: column;
@@ -109,6 +112,18 @@ header {
   background: white;
   margin: 5px 0;
   transition: all 0.3s ease;
+}
+
+.burger-menu.toggle div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.toggle div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.toggle div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Main Hero Section */
@@ -163,12 +178,13 @@ marquee {
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: 0.4s ease-in-out;
+  box-shadow: 0 0 12px rgba(233, 69, 96, 0.5);
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 20px rgba(233, 69, 96, 0.8);
   background: linear-gradient(135deg, #3E4B77, #e94560);
 }
 
@@ -244,7 +260,6 @@ marquee {
   max-width: 800px;
   margin: auto;
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
@@ -276,7 +291,6 @@ marquee {
   max-width: 800px;
   margin: auto;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
@@ -308,7 +322,6 @@ marquee {
   max-width: 800px;
   margin: auto;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
@@ -326,13 +339,25 @@ marquee {
   line-height: 1.8;
 }
 
-
+/* Footer */
 footer {
-  background: #0f1116;
-  padding: 15px;
+  background: #1b1f26;
+  padding: 20px 0;
   text-align: center;
   font-size: 14px;
   color: #aaa;
+  margin-top: auto;
+  width: 100%;
+}
+
+
+footer a {
+  color: #ff95a3;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 /* Animations */
@@ -352,11 +377,13 @@ footer {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 80px;
     right: 30px;
     background: #1b1f26;
     border-radius: 8px;
     padding: 20px;
+    z-index: 99;
+    align-items: flex-start; 
   }
 
   .nav-links.active {
@@ -388,6 +415,86 @@ footer {
   }
 
   marquee {
-    font-size: 20px;
+    font-size: 10px;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: left;
+  }
+}
+
+/* Hero Background Video */
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Main Section */
+.main {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+}
+
+/* Animated Text */
+#animated-text {
+  font-size: 4rem;
+  color: #ff4655;
+  text-shadow: 0 0 10px rgba(255, 70, 85, 0.7);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* Button with Pulse Effect */
+.btn.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 70, 85, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 70, 85, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 70, 85, 0);
+  }
+}
+
+/* FadeIn Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #animated-text {
+    font-size: 2.5rem;
   }
 }
